@@ -3,7 +3,38 @@
 
 This project provides a script to parse the Jitendex dictionary data and create a SQLite database for use in a Flutter application.
 
-## How to Use
+## What's in this repository?
+
+*   `parser.py`: A Python script that parses the raw Jitendex data and creates the `jitendex.db` database.
+*   `jitendex.db`: A pre-built SQLite database containing the parsed dictionary data. You can use this directly in your Flutter app without running the parser script.
+*   `README.md`: This file, which provides instructions on how to use the database and the parser script.
+*   `.gitignore`: A file that tells Git to ignore the `jitendex.db` file, as it is a generated file.
+*   `verify_db.py`: A Python script to verify the integrity of the database.
+
+## Getting Started
+
+There are two ways to use this project:
+
+**1. Use the pre-built database (Recommended for most users)**
+
+If you just want to use the dictionary data in your Flutter app, you can use the included `jitendex.db` file directly. Follow the instructions in the "How to Use" section below.
+
+**2. Run the parser script yourself**
+
+If you want to modify the parsing logic or use a different version of the Jitendex data, you can run the `parser.py` script. Here's how:
+
+1.  **Download the data:** Download the "Jitendex for Yomitan" file from the [Jitendex downloads page](https://jitendex.org/pages/downloads.html).
+2.  **Unzip the data:** Unzip the downloaded file. This will create a number of `term_bank_*.json` files.
+3.  **Place the data:** Move the `term_bank_*.json` files into the root of this repository.
+4.  **Run the script:** Run the following command in your terminal:
+
+    ```bash
+    python parser.py
+    ```
+
+    This will create a new `jitendex.db` file.
+
+## How to Use the Database in a Flutter App
 
 1.  **Add the database to your Flutter project:**
 
